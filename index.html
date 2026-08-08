@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio of Md Shanto Ali, a full-stack web developer and competitive programmer from Bangladesh.">
+  <meta name="theme-color" content="#f1f0e9">
   <title>Md Shanto Ali | Full-Stack Developer</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('portfolio-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="custom.css">
   <link rel="stylesheet" href="photo.css">
+  <link rel="stylesheet" href="theme.css">
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <header class="site-header">
     <a class="logo" href="#home" aria-label="Md Shanto Ali home"><span>MS</span>A.</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Change color theme"><span class="sun" aria-hidden="true">☀</span><span class="moon" aria-hidden="true">☾</span></button>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav" aria-label="Main navigation">
       <a href="#about">About</a><a href="#projects">Projects</a><a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#contact">Contact</a>

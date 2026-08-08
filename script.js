@@ -1,5 +1,21 @@
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
+const themeToggle = document.querySelector('.theme-toggle');
+const themeColor = document.querySelector('meta[name="theme-color"]');
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem('portfolio-theme', theme);
+  const dark = theme === 'dark';
+  themeToggle.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  themeColor.setAttribute('content', dark ? '#0b120f' : '#f1f0e9');
+}
+
+applyTheme(document.documentElement.dataset.theme);
+themeToggle.addEventListener('click', () => {
+  applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+});
 
 toggle.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
